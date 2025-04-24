@@ -51,6 +51,18 @@ app.get('/all-users', async (req, res) => {
     } catch (error) {
         res.json({success : false, message : 'Error While Getting User Data'}); 
     }
+});
+
+app.delete('/remove-user/:id', async (req, res) => {
+
+    try {
+        const userId = req.params.id;
+        console.log(userId);
+        const deleteUser = await userModel.findByIdAndDelete(userId);
+        res.json({success : true, message : 'User Deleted Successfully'});
+    } catch (error) {
+        res.json({success : false, message : 'Error While Delteing User Data'}); 
+    }
 })
 
 
