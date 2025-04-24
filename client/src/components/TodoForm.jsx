@@ -18,10 +18,10 @@ const TodoForm = () => {
         const formData = {name, email, phone, gender};
 
         const res = await axios.post(api +'/add-user', {name, email, phone, gender});
-        setName(' ')
-        setEmail(' ')
-        setPhone(' ')
-        setGender(' ')
+        setName('')
+        setEmail('')
+        setPhone('')
+        setGender('')
     }
  
   return (
@@ -31,11 +31,11 @@ const TodoForm = () => {
 
             <div className='flex flex-col gap-5'>
                 <input required type="text" className='border-2 border-black w-[120%] px-2 py-1.5' placeholder='Enter Your Name' value={name} onChange={(e) => setName(e.target.value)} />
-                <input required type="email" className='border-2 border-black w-[120%] px-2 py-1.5' placeholder='Enter Your Email' valu={email} onChange={(e) => setEmail(e.target.value)} />
-                <input required type="number" className='border-2 border-black w-[120%] px-2 py-1.5' placeholder='Enter Your Age' valu={phone} onChange={(e) => setPhone(e.target.value)} />
-                <input required type="text" className='border-2 border-black w-[120%] px-2 py-1.5' placeholder='Enter Your Gender' valu={gender} onChange={(e) => setGender(e.target.value)} />
+                <input required type="email" className='border-2 border-black w-[120%] px-2 py-1.5' placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input required type="number" className='border-2 border-black w-[120%] px-2 py-1.5' placeholder='Enter Your Phone' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <input required type="text" className='border-2 border-black w-[120%] px-2 py-1.5' placeholder='Enter Your Gender' value={gender} onChange={(e) => setGender(e.target.value)} />
 
-                <button type='submit' className='bg-black text-white w-[120%] font-semibold py-1.5'>Submit</button>
+                <button type='submit' className='bg-black text-white w-[120%] hover:bg-slate-800 font-semibold py-1.5'>Submit</button>
             </div>
         </form>
 

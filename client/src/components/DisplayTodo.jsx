@@ -15,6 +15,11 @@ const DisplayTodo = () => {
         fetchData();
     })
 
+    const handleDelete = async (id) => {
+        const data = await axios.delete(api+`/remove-user/${id}`)
+        fetchData()
+    }
+
   return (
     <div>
 <div className="relative overflow-x-auto flex items-center justify-center mt-10">
@@ -32,6 +37,9 @@ const DisplayTodo = () => {
                 </th>
                 <th scope="col" className="px-6 py-3">
                     Gender
+                </th>
+                <th scope="col" className="px-6 py-3 text-center">
+                    Action
                 </th>
             </tr>
         </thead>
@@ -51,6 +59,14 @@ const DisplayTodo = () => {
                             </td>
                             <td className="px-6 py-4">
                                 {user.gender}
+                            </td>
+                            <td className='flex gap-2 items-center justify-center'>
+                                <button onClick={() => handleDelete(user._id)} className='bg-red-600 text-white px-2 py-1 font-semibold mt-3'>
+                                    Delete
+                                </button>
+                                <button  className='bg-green-600 text-white px-2 py-1 font-semibold mt-3'>
+                                    Edit
+                                </button>
                             </td>
                         </tr>
                     )
