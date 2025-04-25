@@ -4,9 +4,10 @@ import mongoose from 'mongoose';
 import 'dotenv/config';
 
 const PORT = process.env.PORT;
+// console.log(process.env.MONGO_URI);
 
 // DB Connection
-mongoose.connect('mongodb://127.0.0.1:27017/mern-app')
+mongoose.connect(process.env.MONGO_URI)
 .then(() =>    console.log('Database Connected'))
 .catch( err => console.log('Error While Connecting to DB'));
 

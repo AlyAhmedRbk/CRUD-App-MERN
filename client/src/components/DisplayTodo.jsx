@@ -64,9 +64,6 @@ const DisplayTodo = () => {
                                 <button onClick={() => handleDelete(user._id)} className='bg-red-600 text-white px-2 py-1 font-semibold mt-3'>
                                     Delete
                                 </button>
-                                <button  className='bg-green-600 text-white px-2 py-1 font-semibold mt-3'>
-                                    Edit
-                                </button>
                             </td>
                         </tr>
                     )
